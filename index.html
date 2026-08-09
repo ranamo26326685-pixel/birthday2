@@ -1,0 +1,411 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>عيد ميلاد سعيد 🎂</title>
+
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body>
+
+    <!-- ================= الصفحة الرئيسية ================= -->
+
+    <section class="landing">
+
+        <!-- البالونات -->
+        <div class="balloon balloon1"></div>
+        <div class="balloon balloon2"></div>
+        <div class="balloon balloon3"></div>
+        <div class="balloon balloon4"></div>
+
+        <!-- النجوم -->
+        <div class="stars">
+            <span>✦</span>
+            <span>✧</span>
+            <span>✦</span>
+            <span>✧</span>
+            <span>✦</span>
+            <span>✧</span>
+        </div>
+
+        <div class="landing-content">
+
+            <p class="small-text">
+                مفاجأة صغيرة مخصوص ليكي 💕
+            </p>
+
+            <h1>
+                عيد ميلاد سعيد
+                <span>[شهودة]</span> ✨
+            </h1>
+
+            <p class="subtitle">
+                النهارده مش يوم عادي... النهارده يوم مميز لأنه يوم ميلاد واحدة من
+                أجمل الناس في حياتي ❤️
+            </p>
+
+           <button class="surprise-btn" onclick="openSurprise()">
+    افتحي مفاجأتك 🎁
+</button>
+        </div>
+
+    </section>
+
+
+    <!-- ================= قسم الرسالة ================= -->
+
+  <section class="message-section" id="message">
+
+    <div class="message-card">
+
+        <div class="card-icon">
+            💌
+        </div>
+
+        <h2>رسالة صغيرة ليكي</h2>
+
+        <p id="typing-text"></p>
+
+    </div>
+
+</section>
+
+<audio id="typing-sound" preload="auto">
+    <source src="typing.wav" type="audio/wav">
+</audio>
+
+
+
+
+    <!-- <script src="landing.js"></script> -->
+
+   
+<!-- ================= قسم الصور والذكريات ================= -->
+
+<section class="memories-section">
+
+    <div class="section-title">
+
+        <span>📸</span>
+
+        <h2>ذكرياتنا الحلوة</h2>
+
+        <p>
+            شوية صور من أجمل اللحظات اللي جمعتنا سوا ❤️
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <!-- الصورة الأولى -->
+        <div class="polaroid">
+
+            <div class="photo">
+                <img src="d185324d-fbc1-4a68-a07c-46527e9e87ac.jfif" alt="ذكرياتنا">
+            </div>
+
+            <p>
+                , تقريبا دي أول مره نتصور مع بعض 🤍
+                😂 بالاضافه لباقي السيشن اللي حصل في اليوم ده
+            </p>
+
+        </div>
+
+
+        <!-- الصورة الثانية -->
+        <div class="polaroid">
+
+            <div class="photo">
+                <img src="e1f27efa-6eac-4f44-b873-8bf918450adc.jfif" alt="ذكرياتنا">
+            </div>
+
+            <p>
+                يوم من أجمل الايام حرفيا ✨
+            </p>
+
+        </div>
+
+
+        <!-- الصورة الثالثة -->
+        <div class="polaroid">
+
+            <div class="photo">
+                <img src="98511b4f-ad64-407e-870e-d0c11c96fc0d.jfif" alt="ذكرياتنا">
+            </div>
+
+            <p>
+            الهئ والمئ 😂
+            </p>
+
+        </div>
+
+
+        <!-- الصورة الرابعة -->
+        <div class="polaroid">
+
+            <div class="photo">
+                <img src="cf0d65a6-6956-426c-ab73-09a66e6f5b8c.jfif" alt="ذكرياتنا">
+            </div>
+
+            <p>
+                الحب💕
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= صندوق الذكريات ================= -->
+
+<section class="memory-box-section">
+
+    <div class="memory-title">
+
+        <span>🎁</span>
+
+        <h2>صندوق ذكرياتنا</h2>
+
+        <p>
+            كل حاجة حلوة بينا متخبية هنا... ❤️
+        </p>
+
+    </div>
+
+
+    <!-- منطقة الذكريات -->
+
+    <div class="memory-area" id="memoryArea">
+
+
+        <!-- الصندوق -->
+
+        <div class="memory-box" id="memoryBox">
+
+            <div class="box-lid">
+                🎀
+            </div>
+
+            <div class="box-body">
+                🎁
+            </div>
+
+        </div>
+
+
+        <!-- زر الفتح -->
+
+        <button
+            class="open-memory-btn"
+            id="openMemoryBtn"
+            onclick="openMemoryBox()"
+        >
+            افتحي صندوق الذكريات ✨
+        </button>
+
+
+    </div>
+
+
+    <!-- الرسالة الأخيرة -->
+
+    <div
+        class="memory-ending"
+        id="memoryEnding"
+    >
+
+        <div class="ending-heart">
+            ❤️
+        </div>
+
+        <h3>
+            دي مجرد شوية من ذكرياتنا...
+        </h3>
+
+        <p>
+            ولسه قدامنا ذكريات كتير أوي مستنيين نعملها سوا ✨
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= قسم الأغنية ================= -->
+
+<section class="song-section">
+
+    <div class="song-card">
+
+        <div class="music-icon">
+            🎵
+        </div>
+
+        <h2>
+                 اغنية تعبر عن اهتمامي بالتفاصيل 😂❤️
+        </h2>
+
+        <p>
+        ... ❤️ ❤️❤️
+        </p>
+
+        <button class="play-song-btn" onclick="toggleSong()">
+            ▶ تشغيل الاغنية 🎶
+        </button>
+
+
+        <!-- مشغل الصوت -->
+
+        <div class="audio-player" id="audioPlayer">
+
+            <div class="song-info">
+                <span>🎧</span>
+
+                <div>
+                    <strong>اغنية تليق عليكي</strong>
+                    <small>  علي عيونك الحلوة ❤️</small>
+                </div>
+            </div>
+
+          <audio id="ourSong" controls preload="auto">
+    <source src="./song.mp3" type="audio/mpeg">
+    المتصفح لا يدعم تشغيل الصوت.
+</audio>
+        </div>
+
+    </div>
+
+
+    <!-- القلوب والنجوم -->
+
+    <div class="music-hearts" id="musicHearts">
+
+        <span>❤️</span>
+        <span>✨</span>
+        <span>💕</span>
+        <span>⭐</span>
+        <span>💗</span>
+        <span>✨</span>
+        <span>❤️</span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= المفاجأة الأخيرة ================= -->
+
+<section class="final-surprise-section">
+
+    <div class="final-surprise-card">
+
+        <div class="final-icon">
+            🎁
+        </div>
+
+        <h2>
+            وأخيرًا... في مفاجأة أخيرة ❤️
+        </h2>
+
+        <p>
+            وصلنا لنهاية رحلتنا، بس لسه في حاجة صغيرة مستنياكي ✨
+        </p>
+
+        <button
+            class="final-surprise-btn"
+            onclick="showFinalSurprise()"
+        >
+            One Last Surprise ✨
+        </button>
+
+
+        <!-- ================= المحتوى المخفي ================= -->
+
+        <div
+            class="final-content"
+            id="finalContent"
+        >
+
+            <!-- الرسالة -->
+
+            <div class="final-message">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <h3>
+                    I'm so lucky to have you in my life ❤️
+                </h3>
+
+                <p>
+                    كل سنة وإنتي معايا،
+                    وكل سنة وإنتي أحلى وأجمل شهودة في الدنيا  . ✨
+                </p>
+
+            </div>
+
+
+            <!-- QR Code -->
+
+            <div class="final-qr">
+
+                <h4>
+                    ولسه في حاجة كمان... 👀
+                </h4>
+
+                <p>
+                    امسحي الكود واكتشفي  🎁❤️
+                </p>
+
+                <div class="qr-code">
+
+                    <img
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fvt.tiktok.com%2FZS4pU3FrJ%2F"
+                        alt="QR Code للمفاجأة"
+                    >
+
+                </div>
+
+                <p class="qr-hint">
+                    You found your surprise ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Confetti -->
+
+    <div
+        class="confetti-container"
+        id="confettiContainer"
+    ></div>
+
+</section>
+
+
+
+
+    <script src="landing.js"></script>
+
+
+
+</body>
+
+</html>
+
