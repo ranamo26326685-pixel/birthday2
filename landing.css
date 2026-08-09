@@ -1,0 +1,2137 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    background: #fff8f5;
+    color: #4a3b40;
+}
+
+
+/* ================= الصفحة الرئيسية ================= */
+
+.landing {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f4,
+        #fff8e7,
+        #f4f0ff
+    );
+}
+
+.landing-content {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+}
+
+.small-text {
+    font-size: 18px;
+    color: #9b7a83;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1.3;
+    color: #51434a;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #d88c9a;
+    display: inline-block;
+}
+
+.subtitle {
+    max-width: 650px;
+    margin: auto;
+
+    font-size: 18px;
+    line-height: 2;
+
+    color: #76666c;
+}
+
+
+/* ================= الزر ================= */
+
+.surprise-btn {
+    margin-top: 35px;
+
+    padding: 15px 35px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #d88c9a;
+    color: white;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(216, 140, 154, 0.3);
+
+    transition: 0.3s;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(216, 140, 154, 0.4);
+}
+
+
+/* ================= البالونات ================= */
+
+.balloon {
+    position: absolute;
+
+    width: 70px;
+    height: 85px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    opacity: 0.8;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 120px;
+
+    background: #8c7c82;
+
+    top: 80px;
+    left: 50%;
+}
+
+.balloon1 {
+    background: #e8a7b2;
+    right: 8%;
+    bottom: 15%;
+}
+
+.balloon2 {
+    background: #f5c98b;
+    right: 20%;
+    top: 15%;
+
+    width: 55px;
+    height: 70px;
+
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    background: #b7acd9;
+    left: 12%;
+    bottom: 20%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    background: #a8d8c9;
+    left: 22%;
+    top: 13%;
+
+    width: 55px;
+    height: 70px;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(3deg);
+    }
+}
+
+
+/* ================= النجوم ================= */
+
+.stars span {
+    position: absolute;
+
+    color: #e6b85c;
+    font-size: 25px;
+
+    animation: twinkle 2s infinite alternate;
+}
+
+.stars span:nth-child(1) {
+    top: 15%;
+    right: 40%;
+}
+
+.stars span:nth-child(2) {
+    top: 25%;
+    left: 30%;
+    animation-delay: .5s;
+}
+
+.stars span:nth-child(3) {
+    bottom: 25%;
+    right: 35%;
+    animation-delay: 1s;
+}
+
+.stars span:nth-child(4) {
+    top: 35%;
+    right: 12%;
+    animation-delay: .3s;
+}
+
+.stars span:nth-child(5) {
+    bottom: 15%;
+    left: 35%;
+    animation-delay: .8s;
+}
+
+.stars span:nth-child(6) {
+    top: 12%;
+    left: 8%;
+    animation-delay: 1.2s;
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* ================= قسم الرسالة ================= */
+
+.message-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: #fff8f5;
+}
+
+.message-card {
+    width: min(650px, 90%);
+
+    padding: 50px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(80, 60, 70, 0.1);
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition: 1s;
+}
+
+.message-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.message-card h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #d88c9a;
+}
+
+#typing-text {
+    font-size: 18px;
+    line-height: 2.2;
+    color: #66575d;
+}
+
+
+/* ================= الموبايل ================= */
+
+@media (max-width: 600px) {
+
+    .small-text {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .surprise-btn {
+        font-size: 15px;
+        padding: 13px 25px;
+    }
+
+    .balloon {
+        transform: scale(0.7);
+    }
+
+    .message-card {
+        padding: 30px 20px;
+    }
+
+    .message-card h2 {
+        font-size: 25px;
+    }
+
+    #typing-text {
+        font-size: 16px;
+    }
+}
+
+
+
+/* ==================================================
+   قسم الصور والذكريات
+================================================== */
+
+.memories-section {
+    min-height: 100vh;
+    padding: 100px 7%;
+
+    background: linear-gradient(
+        180deg,
+        #fff8f5,
+        #fff1f4
+    );
+}
+
+
+/* عنوان القسم */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title span {
+    font-size: 45px;
+}
+
+.section-title h2 {
+    margin-top: 10px;
+
+    font-size: 40px;
+
+    color: #51434a;
+}
+
+.section-title p {
+    margin-top: 10px;
+
+    color: #8b777d;
+
+    font-size: 17px;
+}
+
+
+/* Gallery */
+
+.gallery {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+/* Polaroid */
+
+.polaroid {
+    background: white;
+
+    padding: 12px 12px 25px;
+
+    box-shadow:
+        0 10px 25px rgba(80, 60, 70, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    text-align: center;
+}
+
+
+/* جعل الصور مائلة */
+
+.polaroid:nth-child(1) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(4deg);
+}
+
+
+/* Hover */
+
+.polaroid:hover {
+    transform:
+        translateY(-15px)
+        rotate(0deg)
+        scale(1.05);
+
+    box-shadow:
+        0 20px 40px rgba(80, 60, 70, 0.2);
+
+    z-index: 5;
+}
+
+
+/* الصورة */
+
+.photo {
+    width: 100%;
+    height: 220px;
+
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Zoom للصورة */
+
+.polaroid:hover img {
+    transform: scale(1.08);
+}
+
+
+/* تعليق الصورة */
+
+.polaroid p {
+    margin-top: 18px;
+
+    font-family: cursive;
+
+    font-size: 16px;
+
+    color: #5e5056;
+}
+
+
+
+/* ==================================================
+   صندوق الذكريات
+================================================== */
+
+.memory-box-section {
+
+    min-height: 100vh;
+
+    padding: 90px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7f8,
+            #f9f3ff,
+            #fffaf1
+        );
+
+    text-align: center;
+}
+
+
+/* العنوان */
+
+.memory-title {
+
+    margin-bottom: 40px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.memory-title span {
+
+    font-size: 45px;
+
+}
+
+
+.memory-title h2 {
+
+    margin: 10px 0;
+
+    color: #51434a;
+
+    font-size: 32px;
+
+}
+
+
+.memory-title p {
+
+    color: #8b777d;
+
+    font-size: 16px;
+
+}
+
+
+/* ==================================================
+   منطقة الصندوق
+================================================== */
+
+.memory-area {
+
+    min-height: 600px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* ==================================================
+   الصندوق
+================================================== */
+
+.memory-box {
+
+    width: 190px;
+
+    height: 150px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.5s;
+}
+
+
+.box-body {
+
+    width: 190px;
+
+    height: 120px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 65px;
+
+    background: #f3d1d8;
+
+    border-radius: 8px 8px 18px 18px;
+
+    box-shadow:
+        0 15px 30px rgba(100, 70, 80, 0.2);
+
+}
+
+
+.box-lid {
+
+    width: 205px;
+
+    height: 45px;
+
+    position: absolute;
+
+    top: 5px;
+
+    left: -7px;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 30px;
+
+    background: #d88c9a;
+
+    border-radius: 8px;
+
+    transform-origin: bottom center;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* لما الصندوق يفتح */
+
+.memory-box.open .box-lid {
+
+    transform:
+        rotateX(-120deg)
+        translateY(-20px);
+
+}
+
+
+.memory-box.open {
+
+    transform:
+        translateY(20px)
+        scale(0.9);
+
+}
+
+
+/* ==================================================
+   الزر
+================================================== */
+
+.open-memory-btn {
+
+    margin-top: 35px;
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #d88c9a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(216, 140, 154, 0.3);
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 30;
+}
+
+
+.open-memory-btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+}
+
+
+/* ==================================================
+   الذكريات
+================================================== */
+
+.memory-item {
+
+    position: absolute;
+
+    width: 170px;
+
+    min-height: 150px;
+
+    padding: 12px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 12px 30px rgba(70, 50, 60, 0.18);
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, 40px)
+        scale(0.5)
+        rotate(0deg);
+
+    animation:
+        memoryAppear 0.8s ease forwards;
+
+    z-index: 15;
+
+}
+
+
+/* الصور */
+
+.memory-item img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    display: block;
+
+}
+
+
+/* النص */
+
+.memory-text {
+
+    padding: 8px 3px 3px;
+
+    color: #66575d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* رسائل الواتساب */
+
+.memory-chat {
+
+    padding: 10px;
+
+    background: #f1f8f2;
+
+    border-radius: 8px;
+
+    text-align: right;
+
+}
+
+
+.chat-message {
+
+    display: inline-block;
+
+    padding: 8px 10px;
+
+    margin: 4px 0;
+
+    background: #dff5df;
+
+    border-radius: 10px;
+
+    color: #4c5b4d;
+
+    font-size: 12px;
+
+}
+
+
+/* Animation */
+
+@keyframes memoryAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 100px)
+            scale(0.3)
+            rotate(0deg);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -15px)
+            scale(1.08)
+            rotate(var(--rotation));
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0)
+            scale(1)
+            rotate(var(--rotation));
+
+    }
+
+}
+
+
+/* ==================================================
+   الرسالة الأخيرة
+================================================== */
+
+.memory-ending {
+
+    display: none;
+
+    margin: 20px auto 0;
+
+    max-width: 600px;
+
+    animation:
+        endingAppear 1s ease forwards;
+
+}
+
+
+.memory-ending.show {
+
+    display: block;
+
+}
+
+
+.ending-heart {
+
+    font-size: 45px;
+
+    animation:
+        heartBeat 1s infinite;
+
+}
+
+
+.memory-ending h3 {
+
+    color: #d88c9a;
+
+    font-size: 24px;
+
+    margin: 10px 0;
+
+}
+
+
+.memory-ending p {
+
+    color: #76666c;
+
+    line-height: 1.8;
+
+}
+
+
+@keyframes endingAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+    }
+
+}
+
+
+/* ==================================================
+   الموبايل
+================================================== */
+
+@media (max-width: 600px) {
+
+    .memory-area {
+
+        min-height: 850px;
+
+    }
+
+
+    .memory-item {
+
+        width: 135px;
+
+        min-height: 125px;
+
+    }
+
+
+    .memory-item img {
+
+        height: 85px;
+
+    }
+
+
+    .memory-text {
+
+        font-size: 11px;
+
+    }
+
+
+    .memory-title h2 {
+
+        font-size: 27px;
+
+    }
+
+}
+
+
+
+/* ==================================================
+   قسم الأغنية
+================================================== */
+
+.song-section {
+    min-height: 80vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 20px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f4,
+        #f4f0ff,
+        #fff8e7
+    );
+}
+
+
+/* كارت الأغنية */
+
+.song-card {
+    position: relative;
+    z-index: 5;
+
+    width: min(600px, 95%);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 60px rgba(80, 60, 70, 0.12);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* أيقونة الموسيقى */
+
+.music-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    animation: musicBounce 1.5s ease-in-out infinite;
+}
+
+
+@keyframes musicBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* العنوان */
+
+.song-card h2 {
+    font-size: 36px;
+
+    color: #51434a;
+
+    margin-bottom: 15px;
+}
+
+
+/* الوصف */
+
+.song-card p {
+    color: #76666c;
+
+    line-height: 2;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+/* زر التشغيل */
+
+.play-song-btn {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #d88c9a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(216, 140, 154, 0.3);
+
+    transition: 0.3s;
+}
+
+
+.play-song-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(216, 140, 154, 0.4);
+}
+
+
+/* مشغل الصوت */
+
+.audio-player {
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background: #fff8f5;
+
+    border-radius: 20px;
+
+    animation: playerAppear 0.5s ease forwards;
+}
+
+
+.audio-player.show {
+    display: block;
+}
+
+
+@keyframes playerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* معلومات الأغنية */
+
+.song-info {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.song-info > span {
+    font-size: 30px;
+}
+
+
+.song-info strong {
+    display: block;
+
+    color: #51434a;
+}
+
+
+.song-info small {
+    color: #9b7a83;
+}
+
+
+/* Audio */
+
+.audio-player audio {
+    width: 100%;
+}
+
+
+/* ==================================================
+   القلوب والنجوم
+================================================== */
+
+.music-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.music-hearts.animate span {
+    animation: heartsUp 3s ease-in-out forwards;
+}
+
+
+.music-hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.music-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: .5s;
+}
+
+.music-hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.music-hearts span:nth-child(4) {
+    left: 55%;
+    animation-delay: .3s;
+}
+
+.music-hearts span:nth-child(5) {
+    left: 70%;
+    animation-delay: .8s;
+}
+
+.music-hearts span:nth-child(6) {
+    left: 82%;
+    animation-delay: 1.2s;
+}
+
+.music-hearts span:nth-child(7) {
+    left: 92%;
+    animation-delay: .6s;
+}
+
+
+@keyframes heartsUp {
+
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: scale(.5) rotate(0);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: scale(1.3) rotate(25deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .song-card {
+        padding: 40px 20px;
+    }
+
+    .song-card h2 {
+        font-size: 28px;
+    }
+
+    .song-card p {
+        font-size: 14px;
+    }
+
+    .play-song-btn {
+        font-size: 14px;
+        padding: 13px 25px;
+    }
+}
+
+
+/* ==================================================
+   QR Code
+================================================== */
+
+.qr-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 20px;
+
+    background: #fff8f5;
+}
+
+
+.qr-card {
+    width: min(500px, 95%);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(80, 60, 70, 0.12);
+}
+
+
+.qr-heart {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+.qr-card h2 {
+    color: #51434a;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+.qr-card > p {
+    color: #76666c;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+}
+
+
+
+/* ==================================================
+   المفاجأة الأخيرة
+================================================== */
+
+.final-surprise-section {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 20px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f7,
+        #f7f1ff,
+        #fff9ed
+    );
+}
+
+
+.final-surprise-card {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(600px, 95%);
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 60px rgba(80, 60, 70, 0.13);
+}
+
+
+/* 🎁 */
+
+.final-icon {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: giftBounce 1.5s ease-in-out infinite;
+}
+
+
+@keyframes giftBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+/* العنوان */
+
+.final-surprise-card h2 {
+    color: #51434a;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+
+.final-surprise-card > p {
+    color: #8b777d;
+
+    margin-bottom: 30px;
+
+    line-height: 1.8;
+}
+
+
+/* الزر */
+
+.final-surprise-btn {
+    border: none;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    background: #d88c9a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(216, 140, 154, 0.3);
+
+    transition: 0.3s;
+}
+
+
+.final-surprise-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 15px 35px rgba(216, 140, 154, 0.4);
+}
+
+
+/* ==================================================
+   المحتوى المخفي
+================================================== */
+
+.final-content {
+    display: none;
+
+    margin-top: 35px;
+
+    animation: finalAppear 1s ease forwards;
+}
+
+
+.final-content.show {
+    display: block;
+}
+
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==================================================
+   الرسالة الأخيرة
+================================================== */
+
+.final-message {
+    padding: 30px 20px;
+
+    margin-bottom: 30px;
+
+    background: #fff8f5;
+
+    border-radius: 25px;
+}
+
+
+.final-heart {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+
+    animation: heartBeat 1s ease-in-out infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+.final-message h3 {
+    color: #d88c9a;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+
+.final-message p {
+    color: #76666c;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   QR
+================================================== */
+
+.final-qr {
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    border: 2px solid #f3dce2;
+}
+
+
+.final-qr h4 {
+    color: #51434a;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.final-qr > p {
+    color: #8b777d;
+
+    font-size: 14px;
+}
+
+
+/* QR Code */
+
+.qr-code {
+    width: 220px;
+    height: 220px;
+
+    margin: 20px auto;
+
+    padding: 10px;
+
+    background: white;
+
+    border: 3px solid #f0dce1;
+
+    border-radius: 15px;
+}
+
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.qr-hint {
+    color: #d88c9a !important;
+
+    font-weight: bold;
+
+    font-size: 16px !important;
+}
+
+
+/* ==================================================
+   Confetti
+================================================== */
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+
+    width: 10px;
+    height: 16px;
+
+    opacity: 0;
+
+    animation:
+        confettiFall 3s linear forwards;
+
+    z-index: 20;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        top: -20px;
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0deg);
+    }
+
+    100% {
+        top: 110%;
+
+        opacity: 0;
+
+        transform:
+            translateX(var(--move))
+            rotate(720deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .final-surprise-card {
+        padding: 45px 20px;
+    }
+
+    .final-surprise-card h2 {
+        font-size: 27px;
+    }
+
+    .final-message h3 {
+        font-size: 21px;
+    }
+
+    .final-surprise-btn {
+        font-size: 15px;
+
+        padding: 14px 25px;
+    }
+
+    .qr-code {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+
+/* ==================================================
+   تحسين الموقع للموبايل 📱
+================================================== */
+
+@media (max-width: 600px) {
+
+    /* ================= Landing ================= */
+
+    .landing {
+        min-height: 100svh;
+        padding: 30px 15px;
+    }
+
+    .landing-content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 38px;
+        line-height: 1.4;
+    }
+
+    h1 span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .small-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 1.9;
+        max-width: 340px;
+    }
+
+    .surprise-btn {
+        margin-top: 25px;
+        padding: 13px 24px;
+        font-size: 14px;
+    }
+
+
+    /* البالونات */
+
+    .balloon {
+        transform: scale(.55);
+    }
+
+    .balloon1 {
+        right: -5%;
+        bottom: 10%;
+    }
+
+    .balloon2 {
+        right: 5%;
+        top: 8%;
+    }
+
+    .balloon3 {
+        left: -5%;
+        bottom: 15%;
+    }
+
+    .balloon4 {
+        left: 5%;
+        top: 8%;
+    }
+
+
+    /* النجوم */
+
+    .stars span {
+        font-size: 18px;
+    }
+
+
+    /* ================= الرسالة ================= */
+
+    .message-section {
+        min-height: 100svh;
+        padding: 25px 15px;
+    }
+
+    .message-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 35px 20px;
+        border-radius: 25px;
+    }
+
+    .card-icon {
+        font-size: 45px;
+    }
+
+    .message-card h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #typing-text {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+
+    /* ================= الصور ================= */
+
+    .memories-section {
+        min-height: auto;
+        padding: 70px 20px;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-title span {
+        font-size: 38px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .section-title p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        max-width: 300px;
+    }
+
+    .polaroid {
+        width: 100%;
+        padding: 10px 10px 22px;
+    }
+
+    .photo {
+        height: 270px;
+    }
+
+    .polaroid p {
+        font-size: 15px;
+        margin-top: 15px;
+    }
+
+
+    /* ================= صندوق الذكريات ================= */
+
+    .memory-box-section {
+        min-height: 100svh;
+        padding: 70px 10px;
+    }
+
+    .memory-title {
+        margin-bottom: 20px;
+    }
+
+    .memory-title span {
+        font-size: 38px;
+    }
+
+    .memory-title h2 {
+        font-size: 27px;
+    }
+
+    .memory-title p {
+        font-size: 14px;
+    }
+
+    .memory-area {
+        min-height: 750px;
+        width: 100%;
+    }
+
+    .memory-box {
+        width: 150px;
+        height: 120px;
+    }
+
+    .box-body {
+        width: 150px;
+        height: 95px;
+        font-size: 52px;
+    }
+
+    .box-lid {
+        width: 165px;
+        height: 38px;
+        left: -7px;
+        font-size: 24px;
+    }
+
+
+    /* كروت الذكريات */
+
+    .memory-item {
+        width: 125px;
+        min-height: 120px;
+        padding: 8px;
+    }
+
+    .memory-item img {
+        width: 100%;
+        height: 130px;
+        object-fit: contain;
+    }
+
+    .memory-text {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .memory-chat {
+        padding: 7px;
+    }
+
+    .chat-message {
+        font-size: 10px;
+        padding: 6px 7px;
+    }
+
+    .open-memory-btn {
+        font-size: 14px;
+        padding: 13px 22px;
+        margin-top: 25px;
+    }
+
+    .memory-ending {
+        padding: 0 15px;
+    }
+
+    .memory-ending h3 {
+        font-size: 20px;
+    }
+
+    .memory-ending p {
+        font-size: 14px;
+    }
+
+
+    /* ================= الأغنية ================= */
+
+    .song-section {
+        min-height: 100svh;
+        padding: 60px 15px;
+    }
+
+    .song-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 35px 20px;
+        border-radius: 28px;
+    }
+
+    .music-icon {
+        font-size: 48px;
+    }
+
+    .song-card h2 {
+        font-size: 27px;
+    }
+
+    .song-card p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .play-song-btn {
+        font-size: 14px;
+        padding: 13px 22px;
+    }
+
+    .audio-player {
+        padding: 15px;
+    }
+
+    .song-info {
+        gap: 8px;
+    }
+
+    .song-info > span {
+        font-size: 25px;
+    }
+
+    .audio-player audio {
+        max-width: 100%;
+    }
+
+
+    /* ================= المفاجأة الأخيرة ================= */
+
+    .final-surprise-section {
+        min-height: 100svh;
+        padding: 60px 15px;
+    }
+
+    .final-surprise-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 40px 18px;
+        border-radius: 28px;
+    }
+
+    .final-icon {
+        font-size: 52px;
+    }
+
+    .final-surprise-card h2 {
+        font-size: 25px;
+        line-height: 1.5;
+    }
+
+    .final-surprise-card > p {
+        font-size: 14px;
+    }
+
+    .final-surprise-btn {
+        font-size: 14px;
+        padding: 13px 22px;
+    }
+
+
+    /* ================= الرسالة الأخيرة ================= */
+
+    .final-message {
+        padding: 25px 15px;
+    }
+
+    .final-heart {
+        font-size: 42px;
+    }
+
+    .final-message h3 {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .final-message p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+
+    /* ================= QR ================= */
+
+    .final-qr {
+        padding: 20px 12px;
+    }
+
+    .final-qr h4 {
+        font-size: 19px;
+    }
+
+    .final-qr > p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .qr-code {
+        width: 180px;
+        height: 180px;
+        padding: 8px;
+    }
+
+    .qr-hint {
+        font-size: 14px !important;
+    }
+
+
+    /* ================= QR Section ================= */
+
+    .qr-section {
+        min-height: 100svh;
+        padding: 60px 15px;
+    }
+
+    .qr-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 35px 18px;
+        border-radius: 25px;
+    }
+
+    .qr-card h2 {
+        font-size: 25px;
+    }
+
+    .qr-card > p {
+        font-size: 14px;
+    }
+
+}
+
+
+
